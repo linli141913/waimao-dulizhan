@@ -1,0 +1,120 @@
+{
+    "nav": {
+        "home": "Home",
+        "products": "Products",
+        "aboutUs": "About Us",
+        "contact": "Contact",
+        "getQuote": "Get a Quote"
+    },
+    "hero": {
+        "badge": "OEM & ODM Services Available",
+        "title1": "Premium",
+        "titleHighlight": "Wood Fiber",
+        "title2": "Cutting Boards",
+        "subtitle": "Crafted with precision using Rhino & NX — anti-bacterial, BPA free, and eco-friendly. Designed for global kitchens, manufactured for excellence.",
+        "viewProducts": "View Products",
+        "requestQuote": "Request a Quote",
+        "yearsExp": "Years Experience",
+        "countriesServed": "Countries Served",
+        "ecoFriendly": "Eco-friendly"
+    },
+    "highlights": {
+        "sectionTag": "Why Choose Us",
+        "sectionTitle": "Quality You Can Trust",
+        "sectionDesc": "Every cutting board is precision-engineered with professional CAD tools and manufactured under strict quality control.",
+        "antiBacterial": "Anti-bacterial",
+        "antiBacterialDesc": "Natural wood fiber composite with built-in anti-bacterial properties for safe food preparation.",
+        "bpaFree": "BPA Free",
+        "bpaFreeDesc": "100% free from BPA, formaldehyde, and harmful chemicals. Safe for daily kitchen use.",
+        "ecoFriendly": "Eco-friendly",
+        "ecoFriendlyDesc": "Made from sustainable wood fiber resources. Fully recyclable and environmentally responsible.",
+        "customDesign": "Custom Design",
+        "customDesignDesc": "Full OEM & ODM capabilities. Custom shapes, sizes, colors, logos, and packaging available."
+    },
+    "featuredProducts": {
+        "sectionTag": "Our Products",
+        "sectionTitle": "Featured Cutting Boards",
+        "sectionDesc": "Browse our selection of premium wood fiber cutting boards, available in various shapes and sizes."
+    },
+    "cta": {
+        "title": "Ready to Start Your Project?",
+        "desc": "Contact us today for a free quote. We support custom designs, OEM & ODM orders with competitive MOQ.",
+        "getQuote": "Get a Free Quote",
+        "browseProducts": "Browse Products"
+    },
+    "products": {
+        "pageTitle": "Our Products",
+        "pageDesc": "Premium wood fiber cutting boards crafted with precision. Available in various shapes and sizes for every kitchen.",
+        "filter": "Filter:",
+        "all": "All",
+        "showing": "Showing",
+        "productsCount": "products",
+        "moq": "MOQ:"
+    },
+    "productDetail": {
+        "specifications": "Specifications",
+        "dimensions": "Dimensions",
+        "weight": "Weight",
+        "material": "Material",
+        "colors": "Colors",
+        "leadTime": "Lead Time",
+        "packaging": "Packaging",
+        "interactiveViews": "Interactive Views",
+        "interactiveViewsDesc": "Explore the product in 3D and review the engineering drawing",
+        "relatedProducts": "Related Products",
+        "requestQuote": "Request a Quote"
+    },
+    "contact": {
+        "pageTitle": "Contact Us",
+        "pageDesc": "Ready to start your project? Fill out the form below and our team will get back to you within 24 hours.",
+        "formTitle": "Send Us an Inquiry",
+        "formRequired": "Fields marked with * are required",
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "phone": "Phone",
+        "productOfInterest": "Product of Interest",
+        "estimatedQty": "Estimated Quantity",
+        "message": "Message",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "you@company.com",
+        "companyPlaceholder": "Company name (optional)",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "productPlaceholder": "e.g. Rectangular Cutting Board",
+        "qtyPlaceholder": "e.g. 500 pcs",
+        "messagePlaceholder": "Tell us about your requirements, custom design needs, target market, etc.",
+        "submit": "Submit Inquiry",
+        "submitting": "Submitting…",
+        "successTitle": "Thank You!",
+        "successMsg": "Your inquiry has been submitted successfully. We'll get back to you within 24 hours.",
+        "sendAnother": "Send Another Inquiry",
+        "errorMsg": "Something went wrong. Please try again or email us directly.",
+        "address": "Address",
+        "addressValue": "Guangdong, China",
+        "emailLabel": "Email",
+        "emailValue": "info@woodcraftpro.com",
+        "businessHours": "Business Hours",
+        "businessHoursValue": "Mon–Fri, 9:00 AM – 6:00 PM (CST)",
+        "quickResponse": "⚡ Quick Response",
+        "quickResponseMsg": "We typically respond to inquiries within 24 hours on business days. For urgent requests, please include your phone number."
+    },
+    "viewer3d": {
+        "title": "3D Model Viewer",
+        "interactive": "Interactive",
+        "hint": "🖱 Drag to rotate · Scroll to zoom"
+    },
+    "viewer2d": {
+        "title": "2D Engineering Drawing",
+        "hint": "🖱 Drag to pan · Scroll to zoom · Double-click to reset"
+    },
+    "footer": {
+        "brand": "WoodCraftPro",
+        "brandDesc": "Professional wood fiber cutting boards manufacturer. OEM & ODM services available.",
+        "productsTitle": "Products",
+        "allProducts": "All Products",
+        "cuttingBoards": "Cutting Boards",
+        "companyTitle": "Company",
+        "aboutUs": "About Us",
+        "copyright": "© {year} WoodCraftPro. All rights reserved."
+    }
+}

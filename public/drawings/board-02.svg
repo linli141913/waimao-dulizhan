@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#1a2744">
+  <!-- Grid -->
+  <defs>
+    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#253a5e" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#8ab4f8"/>
+    </marker>
+    <marker id="arr2R" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6" fill="#8ab4f8"/>
+    </marker>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid2)"/>
+
+  <!-- Title Block -->
+  <rect x="550" y="500" width="240" height="90" fill="none" stroke="#5a8fc9" stroke-width="1.5"/>
+  <line x1="550" y1="530" x2="790" y2="530" stroke="#5a8fc9" stroke-width="1"/>
+  <line x1="550" y1="555" x2="790" y2="555" stroke="#5a8fc9" stroke-width="1"/>
+  <line x1="550" y1="575" x2="790" y2="575" stroke="#5a8fc9" stroke-width="1"/>
+  <text x="670" y="520" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="11">WoodCraftPro</text>
+  <text x="670" y="547" text-anchor="middle" fill="#c4d8f0" font-family="monospace" font-size="10">Wood Fiber Cutting Board - Round</text>
+  <text x="670" y="568" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="9">PART No: ROUND-01  REV: A</text>
+  <text x="670" y="587" text-anchor="middle" fill="#6a92c4" font-family="monospace" font-size="9">SCALE 1:2  UNIT: mm  MATERIAL: WFC</text>
+
+  <!-- TOP VIEW -->
+  <text x="220" y="45" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="14" font-weight="bold">TOP VIEW</text>
+
+  <!-- Board outline - circle -->
+  <circle cx="220" cy="195" r="140" fill="none" stroke="#c4d8f0" stroke-width="2"/>
+
+  <!-- Center lines -->
+  <line x1="220" y1="40" x2="220" y2="350" stroke="#5a8fc9" stroke-width="0.5" stroke-dasharray="10,5,2,5"/>
+  <line x1="65" y1="195" x2="375" y2="195" stroke="#5a8fc9" stroke-width="0.5" stroke-dasharray="10,5,2,5"/>
+
+  <!-- Diameter dimension -->
+  <line x1="80" y1="195" x2="360" y2="195" stroke="#8ab4f8" stroke-width="0.8" marker-start="url(#arr2R)" marker-end="url(#arr2)"/>
+  <text x="220" y="186" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="12">Ø350</text>
+
+  <!-- Juice groove (inner circle for decoration) -->
+  <circle cx="220" cy="195" r="115" fill="none" stroke="#6a92c4" stroke-width="0.8" stroke-dasharray="5,3"/>
+  <text x="330" y="125" fill="#f0a040" font-family="monospace" font-size="9">JUICE GROOVE</text>
+  <line x1="310" y1="128" x2="290" y2="145" stroke="#f0a040" stroke-width="0.5"/>
+
+  <!-- SIDE VIEW -->
+  <text x="600" y="175" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="14" font-weight="bold">SIDE VIEW</text>
+
+  <!-- Side profile - elliptical shape -->
+  <rect x="480" y="200" width="240" height="12" rx="6" ry="6" fill="none" stroke="#c4d8f0" stroke-width="2"/>
+
+  <!-- Width dimension for side -->
+  <line x1="480" y1="240" x2="720" y2="240" stroke="#8ab4f8" stroke-width="0.8" marker-start="url(#arr2R)" marker-end="url(#arr2)"/>
+  <line x1="480" y1="212" x2="480" y2="250" stroke="#8ab4f8" stroke-width="0.5"/>
+  <line x1="720" y1="212" x2="720" y2="250" stroke="#8ab4f8" stroke-width="0.5"/>
+  <text x="600" y="258" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="12">350</text>
+
+  <!-- Thickness dimension -->
+  <line x1="750" y1="200" x2="750" y2="212" stroke="#8ab4f8" stroke-width="0.8" marker-start="url(#arr2R)" marker-end="url(#arr2)"/>
+  <line x1="720" y1="200" x2="760" y2="200" stroke="#8ab4f8" stroke-width="0.5"/>
+  <line x1="720" y1="212" x2="760" y2="212" stroke="#8ab4f8" stroke-width="0.5"/>
+  <text x="773" y="210" fill="#8ab4f8" font-family="monospace" font-size="10">18</text>
+
+  <!-- DETAIL VIEW -->
+  <text x="600" y="310" text-anchor="middle" fill="#8ab4f8" font-family="monospace" font-size="14" font-weight="bold">DETAIL A - EDGE PROFILE</text>
+
+  <!-- Edge profile detail -->
+  <rect x="530" y="340" width="140" height="50" rx="0" ry="0" fill="none" stroke="#5a8fc9" stroke-width="1" stroke-dasharray="4,4"/>
+  <path d="M 550 360 L 550 375 Q 550 380 555 380 L 645 380 Q 650 380 650 375 L 650 360" fill="none" stroke="#c4d8f0" stroke-width="2"/>
+
+  <!-- Radius callout -->
+  <text x="540" y="398" fill="#f0a040" font-family="monospace" font-size="9">R5</text>
+  <text x="652" y="398" fill="#f0a040" font-family="monospace" font-size="9">R5</text>
+
+  <!-- Notes -->
+  <text x="70" y="400" fill="#6a92c4" font-family="monospace" font-size="10">NOTES:</text>
+  <text x="70" y="418" fill="#6a92c4" font-family="monospace" font-size="9">1. MATERIAL: WOOD FIBER COMPOSITE (WFC)</text>
+  <text x="70" y="433" fill="#6a92c4" font-family="monospace" font-size="9">2. ALL EDGES ROUNDED R5</text>
+  <text x="70" y="448" fill="#6a92c4" font-family="monospace" font-size="9">3. JUICE GROOVE: 3mm DEEP x 5mm WIDE</text>
+  <text x="70" y="463" fill="#6a92c4" font-family="monospace" font-size="9">4. SURFACE FINISH: SATIN MATTE</text>
+  <text x="70" y="478" fill="#6a92c4" font-family="monospace" font-size="9">5. TOLERANCES: ±0.5mm</text>
+
+  <!-- Border -->
+  <rect x="10" y="10" width="780" height="580" fill="none" stroke="#5a8fc9" stroke-width="2"/>
+</svg>

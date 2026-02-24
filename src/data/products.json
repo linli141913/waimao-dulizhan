@@ -1,0 +1,88 @@
+[
+    {
+        "id": "wood-fiber-board-rect-01",
+        "category": "cutting-board",
+        "images": [
+            "/images/board-01-a.jpg",
+            "/images/board-01-b.jpg"
+        ],
+        "model3d": "/models/board-01.glb",
+        "drawing2d": "/drawings/board-01.svg",
+        "specs": {
+            "dimensions": "400 × 280 × 18 mm",
+            "weight": "850g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Walnut"
+            ],
+            "moq": "500 pcs",
+            "leadTime": "25-30 days",
+            "packaging": "Shrink wrap + Carton"
+        },
+        "features": [
+            "Anti-bacterial",
+            "BPA Free",
+            "Dishwasher Safe",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-02-24"
+    },
+    {
+        "id": "wood-fiber-board-round-01",
+        "category": "cutting-board",
+        "images": [
+            "/images/board-02-a.jpg",
+            "/images/board-02-b.jpg"
+        ],
+        "model3d": "/models/board-02.glb",
+        "drawing2d": "/drawings/board-02.svg",
+        "specs": {
+            "dimensions": "Ø350 × 18 mm",
+            "weight": "720g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Black"
+            ],
+            "moq": "500 pcs",
+            "leadTime": "25-30 days",
+            "packaging": "Shrink wrap + Carton"
+        },
+        "features": [
+            "Anti-bacterial",
+            "BPA Free",
+            "Dishwasher Safe",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-02-24"
+    },
+    {
+        "id": "wood-fiber-board-large-01",
+        "category": "cutting-board",
+        "images": [
+            "/images/board-03-a.jpg"
+        ],
+        "specs": {
+            "dimensions": "500 × 350 × 20 mm",
+            "weight": "1200g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Walnut",
+                "Black"
+            ],
+            "moq": "300 pcs",
+            "leadTime": "30-35 days",
+            "packaging": "Individual box + Carton"
+        },
+        "features": [
+            "Anti-bacterial",
+            "BPA Free",
+            "Dishwasher Safe",
+            "Eco-friendly",
+            "Extra Large"
+        ],
+        "createdAt": "2026-02-24"
+    }
+]
