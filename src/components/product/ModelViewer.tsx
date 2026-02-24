@@ -3,6 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, ContactShadows, Float, RoundedBox } from "@react-three/drei";
 import { Suspense, useState } from "react";
+import { useTranslations } from "next-intl";
 
 /** Procedural cutting board geometry — demo model, no .glb needed */
 function CuttingBoard({ shape = "rect" }: { shape?: "rect" | "round" }) {
@@ -61,6 +62,7 @@ interface ModelViewerProps {
 
 export default function ModelViewer({ productId, shape = "rect" }: ModelViewerProps) {
     const [isPlaying, setIsPlaying] = useState(true);
+    const t = useTranslations("viewer3d");
     return (
         <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-b from-zinc-100 to-zinc-50 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-950">
             {/* Header */}
@@ -70,7 +72,7 @@ export default function ModelViewer({ productId, shape = "rect" }: ModelViewerPr
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                     </svg>
                     <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                        3D Model Viewer
+                        {t("title")}
                     </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -91,7 +93,7 @@ export default function ModelViewer({ productId, shape = "rect" }: ModelViewerPr
                         )}
                     </button>
                     <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-                        Interactive
+                        {t("interactive")}
                     </span>
                 </div>
             </div>
@@ -125,7 +127,7 @@ export default function ModelViewer({ productId, shape = "rect" }: ModelViewerPr
             {/* Controls hint */}
             <div className="border-t border-zinc-200 px-4 py-2 dark:border-zinc-800">
                 <p className="text-center text-xs text-zinc-400 dark:text-zinc-500">
-                    🖱 Drag to rotate · Scroll to zoom
+                    {t("hint")}
                 </p>
             </div>
         </div>

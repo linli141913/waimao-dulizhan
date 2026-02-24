@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 const ModelViewer = dynamic(() => import("@/components/product/ModelViewer"), {
     ssr: false,
@@ -28,15 +29,16 @@ interface InteractiveViewersProps {
 }
 
 export default function InteractiveViewers({ productId, shape, model3d, drawing2d }: InteractiveViewersProps) {
+    const t = useTranslations("productDetail");
     if (!model3d && !drawing2d) return null;
 
     return (
         <div className="mt-16">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                Interactive Views
+                {t("interactiveViews")}
             </h2>
             <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-                Explore the product in 3D and review the engineering drawing
+                {t("interactiveViewsDesc")}
             </p>
             <div className={`mt-8 grid grid-cols-1 gap-6 ${model3d && drawing2d ? "lg:grid-cols-2" : ""}`}>
                 {model3d && (

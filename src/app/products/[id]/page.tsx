@@ -5,6 +5,7 @@ import InteractiveViewers from "@/components/product/InteractiveViewers";
 import { productJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import type { Product } from "@/types/product";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 const products = productsData as Product[];
 
@@ -44,6 +45,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     const related = products.filter(
         (p) => p.category === product.category && p.id !== product.id
     );
+    const t = await getTranslations("productDetail");
 
     return (
         <div className="bg-white dark:bg-zinc-950">
@@ -134,16 +136,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Specs Table */}
                         <div className="mt-8">
-                            <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">Specifications</h2>
+                            <h2 className="text-lg font-semibold text-zinc-900 dark:text-white">{t("specifications")}</h2>
                             <dl className="mt-4 divide-y divide-zinc-200 dark:divide-zinc-800">
                                 {Object.entries({
-                                    Dimensions: product.specs.dimensions,
-                                    Weight: product.specs.weight,
-                                    Material: product.specs.material,
-                                    Colors: product.specs.color.join(", "),
+                                    [t("dimensions")]: product.specs.dimensions,
+                                    [t("weight")]: product.specs.weight,
+                                    [t("material")]: product.specs.material,
+                                    [t("colors")]: product.specs.color.join(", "),
                                     MOQ: product.specs.moq,
-                                    "Lead Time": product.specs.leadTime,
-                                    Packaging: product.specs.packaging,
+                                    [t("leadTime")]: product.specs.leadTime,
+                                    [t("packaging")]: product.specs.packaging,
                                 }).map(([key, value]) => (
                                     <div key={key} className="flex justify-between py-3">
                                         <dt className="text-sm text-zinc-500 dark:text-zinc-400">{key}</dt>
@@ -159,7 +161,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 href={`/contact?product=${product.id}`}
                                 className="inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition-all hover:bg-emerald-500 hover:-translate-y-0.5 sm:w-auto"
                             >
-                                Request a Quote
+                                {t("requestQuote")}
                                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
@@ -180,7 +182,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 {related.length > 0 && (
                     <div className="mt-20 border-t border-zinc-200 pt-12 dark:border-zinc-800">
                         <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                            Related Products
+                            {t("relatedProducts")}
                         </h2>
                         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {related.map((p) => (

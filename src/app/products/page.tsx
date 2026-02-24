@@ -2,6 +2,7 @@ import ProductCard from "@/components/product/ProductCard";
 import productsData from "@/data/products.json";
 import type { Product } from "@/types/product";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 const products = productsData as Product[];
 
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
         "Browse our complete range of premium wood fiber cutting boards. Various shapes, sizes and custom options available.",
 };
 
-export default function ProductsPage() {
-    // Get unique categories
+export default async function ProductsPage() {
+    const t = await getTranslations("products");
     const categories = Array.from(new Set(products.map((p) => p.category)));
 
     return (
@@ -21,11 +22,10 @@ export default function ProductsPage() {
             <div className="bg-zinc-900 py-16">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Our Products
+                        {t("pageTitle")}
                     </h1>
                     <p className="mt-3 max-w-xl text-lg text-zinc-400">
-                        Premium wood fiber cutting boards crafted with precision. Available
-                        in various shapes and sizes for every kitchen.
+                        {t("pageDesc")}
                     </p>
                 </div>
             </div>
@@ -35,10 +35,10 @@ export default function ProductsPage() {
                 {/* Filter bar */}
                 <div className="mb-8 flex flex-wrap items-center gap-3">
                     <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-                        Filter:
+                        {t("filter")}
                     </span>
                     <button className="rounded-full bg-emerald-600 px-4 py-1.5 text-sm font-medium text-white">
-                        All
+                        {t("all")}
                     </button>
                     {categories.map((cat) => (
                         <button
@@ -55,7 +55,9 @@ export default function ProductsPage() {
 
                 {/* Results count */}
                 <p className="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
-                    Showing <span className="font-medium text-zinc-900 dark:text-white">{products.length}</span> products
+                    {t("showing")}{" "}
+                    <span className="font-medium text-zinc-900 dark:text-white">{products.length}</span>{" "}
+                    {t("productsCount")}
                 </p>
 
                 {/* Product Grid */}

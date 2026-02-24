@@ -1,5 +1,6 @@
 import InquiryForm from "@/components/inquiry/InquiryForm";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
     title: "Contact Us | WoodCraftPro",
@@ -7,22 +8,14 @@ export const metadata: Metadata = {
         "Get in touch with WoodCraftPro for custom cutting board orders, OEM & ODM services, and product inquiries.",
 };
 
-export default function ContactPage({
+export default async function ContactPage({
     searchParams,
 }: {
     searchParams: Promise<{ product?: string }>;
 }) {
-    // We need to handle the async searchParams
-    return <ContactContent searchParamsPromise={searchParams} />;
-}
-
-async function ContactContent({
-    searchParamsPromise,
-}: {
-    searchParamsPromise: Promise<{ product?: string }>;
-}) {
-    const searchParams = await searchParamsPromise;
-    const productId = searchParams.product || "";
+    const params = await searchParams;
+    const productId = params.product || "";
+    const t = await getTranslations("contact");
 
     return (
         <div className="bg-white dark:bg-zinc-950">
@@ -30,11 +23,10 @@ async function ContactContent({
             <div className="bg-zinc-900 py-16">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Contact Us
+                        {t("pageTitle")}
                     </h1>
                     <p className="mt-3 max-w-xl text-lg text-zinc-400">
-                        Ready to start your project? Fill out the form below and our team
-                        will get back to you within 24 hours.
+                        {t("pageDesc")}
                     </p>
                 </div>
             </div>
@@ -46,10 +38,10 @@ async function ContactContent({
                     <div className="lg:col-span-2">
                         <div className="rounded-2xl border border-zinc-200 p-6 sm:p-8 dark:border-zinc-800">
                             <h2 className="text-xl font-bold text-zinc-900 dark:text-white">
-                                Send Us an Inquiry
+                                {t("formTitle")}
                             </h2>
                             <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                                Fields marked with <span className="text-red-500">*</span> are required
+                                {t("formRequired")}
                             </p>
                             <div className="mt-6">
                                 <InquiryForm preselectedProductId={productId} />
@@ -59,7 +51,6 @@ async function ContactContent({
 
                     {/* Right: Contact Info */}
                     <div className="space-y-6">
-                        {/* Address */}
                         <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
@@ -69,15 +60,12 @@ async function ContactContent({
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">Address</h3>
-                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
-                                        Guangdong, China
-                                    </p>
+                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">{t("address")}</h3>
+                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{t("addressValue")}</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Email */}
                         <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
@@ -86,15 +74,12 @@ async function ContactContent({
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">Email</h3>
-                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
-                                        info@woodcraftpro.com
-                                    </p>
+                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">{t("emailLabel")}</h3>
+                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{t("emailValue")}</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Business Hours */}
                         <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
@@ -103,22 +88,15 @@ async function ContactContent({
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">Business Hours</h3>
-                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">
-                                        Mon–Fri, 9:00 AM – 6:00 PM (CST)
-                                    </p>
+                                    <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">{t("businessHours")}</h3>
+                                    <p className="mt-0.5 text-sm text-zinc-500 dark:text-zinc-400">{t("businessHoursValue")}</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Response Time */}
                         <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-800 dark:bg-emerald-950/20">
-                            <h3 className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">
-                                ⚡ Quick Response
-                            </h3>
-                            <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">
-                                We typically respond to inquiries within 24 hours on business days. For urgent requests, please include your phone number.
-                            </p>
+                            <h3 className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">{t("quickResponse")}</h3>
+                            <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">{t("quickResponseMsg")}</p>
                         </div>
                     </div>
                 </div>
