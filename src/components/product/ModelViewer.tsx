@@ -56,11 +56,10 @@ function LoadingFallback() {
 }
 
 interface ModelViewerProps {
-    productId: string;
     shape?: "rect" | "round";
 }
 
-export default function ModelViewer({ productId, shape = "rect" }: ModelViewerProps) {
+export default function ModelViewer({ shape = "rect" }: ModelViewerProps) {
     const [isPlaying, setIsPlaying] = useState(true);
     const t = useTranslations("viewer3d");
     return (

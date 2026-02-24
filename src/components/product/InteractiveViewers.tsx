@@ -42,7 +42,7 @@ export default function InteractiveViewers({ productId, shape, model3d, drawing2
             </p>
             <div className={`mt-8 grid grid-cols-1 gap-6 ${model3d && drawing2d ? "lg:grid-cols-2" : ""}`}>
                 {model3d && (
-                    <ModelViewer productId={productId} shape={shape} />
+                    <ModelViewer shape={shape} />
                 )}
                 {drawing2d && (
                     <DrawingViewer drawingPath={drawing2d} />

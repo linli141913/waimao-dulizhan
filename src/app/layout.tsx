@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { GoogleAnalytics, BaiduAnalytics } from "@/components/Analytics";
 import { organizationJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -32,9 +34,9 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100`}
       >
         <script
           type="application/ld+json"
@@ -43,10 +45,15 @@ export default async function RootLayout({
           }}
         />
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </ThemeProvider>
         </NextIntlClientProvider>
+
+        <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        <BaiduAnalytics trackingId={process.env.NEXT_PUBLIC_BAIDU_ID || ""} />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,6 +40,7 @@ export default function Header() {
                         </Link>
                     ))}
                     <LanguageSwitcher currentLocale={locale} />
+                    <ThemeToggle />
                     <Link
                         href="/contact"
                         className="ml-2 rounded-lg bg-emerald-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
@@ -76,8 +78,9 @@ export default function Header() {
                             {link.label}
                         </Link>
                     ))}
-                    <div className="mt-2 px-4">
+                    <div className="mt-2 flex items-center justify-between px-4">
                         <LanguageSwitcher currentLocale={locale} />
+                        <ThemeToggle />
                     </div>
                     <Link
                         href="/contact"
