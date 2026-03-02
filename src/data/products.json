@@ -5,6 +5,7 @@
         "description": "Our best-selling rectangular cutting board, perfect for everyday food prep. Features a juice groove and non-slip edges.",
         "category": "cutting-board",
         "images": [],
+        "model3d": "/models/board-01.glb",
         "drawing2d": "/drawings/board-01.svg",
         "specs": {
             "dimensions": "400 × 280 × 18 mm",
@@ -32,6 +33,7 @@
         "description": "Elegant round board ideal for cheese platters and serving. Smooth edges with a premium finish.",
         "category": "cutting-board",
         "images": [],
+        "model3d": "/models/board-02.glb",
         "drawing2d": "/drawings/board-02.svg",
         "specs": {
             "dimensions": "Ø350 × 18 mm",
@@ -114,6 +116,7 @@
         "description": "Elegant serving tray with integrated handles. Perfect for breakfast in bed, charcuterie, or entertaining.",
         "category": "serving-tray",
         "images": [],
+        "model3d": "/models/tray-01.glb",
         "specs": {
             "dimensions": "450 × 300 × 25 mm",
             "weight": "950g",
