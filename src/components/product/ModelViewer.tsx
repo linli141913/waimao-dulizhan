@@ -1,27 +1,16 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, ContactShadows, Float, RoundedBox, useGLTF } from "@react-three/drei";
+import { OrbitControls, Environment, ContactShadows, Float, RoundedBox } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import { useTranslations } from "next-intl";
 
-/** Load a real .glb model */
-function GlbModel({ url }: { url: string }) {
-    const { scene } = useGLTF(url);
-    return (
-        <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
-            <primitive object={scene} scale={1} />
-        </Float>
-    );
-}
-
-/** Procedural cutting board geometry — fallback when no .glb provided */
+/** Procedural cutting board geometry — always available as fallback */
 function CuttingBoard({ shape = "rect" }: { shape?: "rect" | "round" }) {
     return (
         <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
             <group>
                 {shape === "rect" ? (
-                    // Rectangular board: 400×280×18 mm → scaled to Three.js units
                     <RoundedBox args={[4, 0.18, 2.8]} radius={0.15} smoothness={4}>
                         <meshStandardMaterial
                             color="#c4956a"
@@ -30,7 +19,6 @@ function CuttingBoard({ shape = "rect" }: { shape?: "rect" | "round" }) {
                         />
                     </RoundedBox>
                 ) : (
-                    // Round board: Ø350×18 mm
                     <mesh>
                         <cylinderGeometry args={[1.75, 1.75, 0.18, 64]} />
                         <meshStandardMaterial
@@ -70,13 +58,9 @@ interface ModelViewerProps {
     modelPath?: string;
 }
 
-export default function ModelViewer({ shape = "rect", modelPath }: ModelViewerProps) {
+export default function ModelViewer({ shape = "rect" }: ModelViewerProps) {
     const [isPlaying, setIsPlaying] = useState(true);
-    const [loadError, setLoadError] = useState(false);
     const t = useTranslations("viewer3d");
-
-    // Determine if we should try loading the .glb
-    const useGlb = !!modelPath && !loadError;
 
     return (
         <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-b from-zinc-100 to-zinc-50 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-950">
@@ -113,21 +97,13 @@ export default function ModelViewer({ shape = "rect", modelPath }: ModelViewerPr
                 </div>
             </div>
 
-            {/* Canvas */}
+            {/* Canvas — always renders procedural geometry for now */}
             <div className="h-[400px] w-full">
                 <Suspense fallback={<LoadingFallback />}>
                     <Canvas camera={{ position: [5, 3, 5], fov: 35 }}>
                         <ambientLight intensity={0.4} />
                         <directionalLight position={[5, 5, 5]} intensity={0.8} />
-                        {useGlb ? (
-                            <GlbModelWithFallback
-                                url={modelPath!}
-                                shape={shape}
-                                onError={() => setLoadError(true)}
-                            />
-                        ) : (
-                            <CuttingBoard shape={shape} />
-                        )}
+                        <CuttingBoard shape={shape} />
                         <ContactShadows
                             position={[0, -0.15, 0]}
                             opacity={0.4}
@@ -155,22 +131,4 @@ export default function ModelViewer({ shape = "rect", modelPath }: ModelViewerPr
             </div>
         </div>
     );
-}
-
-/** Wrapper that tries .glb and falls back to procedural geometry on error */
-function GlbModelWithFallback({
-    url,
-    shape,
-    onError,
-}: {
-    url: string;
-    shape: "rect" | "round";
-    onError: () => void;
-}) {
-    try {
-        return <GlbModel url={url} />;
-    } catch {
-        onError();
-        return <CuttingBoard shape={shape} />;
-    }
 }
