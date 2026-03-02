@@ -10,6 +10,8 @@ export interface ProductSpecs {
 
 export interface Product {
   id: string;
+  name: string;
+  description?: string;
   category: string;
   images: string[];
   model3d?: string;

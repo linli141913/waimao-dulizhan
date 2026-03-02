@@ -1,10 +1,12 @@
 [
     {
         "id": "wood-fiber-board-rect-01",
+        "name": "Classic Rectangular Board",
+        "description": "Our best-selling rectangular cutting board, perfect for everyday food prep. Features a juice groove and non-slip edges.",
         "category": "cutting-board",
         "images": [
-            "/images/board-01-a.jpg",
-            "/images/board-01-b.jpg"
+            "/images/products/board-rect-01-a.jpg",
+            "/images/products/board-rect-01-b.jpg"
         ],
         "model3d": "/models/board-01.glb",
         "drawing2d": "/drawings/board-01.svg",
@@ -30,10 +32,12 @@
     },
     {
         "id": "wood-fiber-board-round-01",
+        "name": "Round Serving Board",
+        "description": "Elegant round board ideal for cheese platters and serving. Smooth edges with a premium finish.",
         "category": "cutting-board",
         "images": [
-            "/images/board-02-a.jpg",
-            "/images/board-02-b.jpg"
+            "/images/products/board-round-01-a.jpg",
+            "/images/products/board-round-01-b.jpg"
         ],
         "model3d": "/models/board-02.glb",
         "drawing2d": "/drawings/board-02.svg",
@@ -59,9 +63,11 @@
     },
     {
         "id": "wood-fiber-board-large-01",
+        "name": "Professional Chef Board",
+        "description": "Extra-large board designed for professional kitchens. Ample workspace for carving and heavy-duty prep.",
         "category": "cutting-board",
         "images": [
-            "/images/board-03-a.jpg"
+            "/images/products/board-large-01-a.jpg"
         ],
         "specs": {
             "dimensions": "500 × 350 × 20 mm",
@@ -84,5 +90,151 @@
             "Extra Large"
         ],
         "createdAt": "2026-02-24"
+    },
+    {
+        "id": "wood-fiber-board-mini-01",
+        "name": "Mini Prep Board Set",
+        "description": "Compact set of 3 mini boards for small tasks — garlic, herbs, lemon slicing. Color-coded for hygiene.",
+        "category": "cutting-board",
+        "images": [
+            "/images/products/board-mini-01-a.jpg",
+            "/images/products/board-mini-01-b.jpg"
+        ],
+        "specs": {
+            "dimensions": "200 × 150 × 12 mm (×3)",
+            "weight": "280g (each)",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Green",
+                "Blue",
+                "Red"
+            ],
+            "moq": "1000 sets",
+            "leadTime": "20-25 days",
+            "packaging": "Gift box + Carton"
+        },
+        "features": [
+            "Anti-bacterial",
+            "BPA Free",
+            "Lightweight",
+            "Color-coded"
+        ],
+        "createdAt": "2026-03-01"
+    },
+    {
+        "id": "serving-tray-rect-01",
+        "name": "Rectangular Serving Tray",
+        "description": "Elegant serving tray with integrated handles. Perfect for breakfast in bed, charcuterie, or entertaining.",
+        "category": "serving-tray",
+        "images": [
+            "/images/products/tray-rect-01-a.jpg",
+            "/images/products/tray-rect-01-b.jpg"
+        ],
+        "model3d": "/models/tray-01.glb",
+        "specs": {
+            "dimensions": "450 × 300 × 25 mm",
+            "weight": "950g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Dark Oak"
+            ],
+            "moq": "300 pcs",
+            "leadTime": "25-30 days",
+            "packaging": "Individual box + Carton"
+        },
+        "features": [
+            "Food Safe",
+            "BPA Free",
+            "Built-in Handles",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-03-01"
+    },
+    {
+        "id": "serving-tray-round-01",
+        "name": "Round Lazy Susan Tray",
+        "description": "Rotating round tray for dining tables. Smooth 360° rotation with anti-slip base.",
+        "category": "serving-tray",
+        "images": [
+            "/images/products/tray-round-01-a.jpg"
+        ],
+        "specs": {
+            "dimensions": "Ø400 × 30 mm",
+            "weight": "1100g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Walnut"
+            ],
+            "moq": "200 pcs",
+            "leadTime": "30-35 days",
+            "packaging": "Individual box + Carton"
+        },
+        "features": [
+            "360° Rotation",
+            "Anti-slip Base",
+            "BPA Free",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-03-01"
+    },
+    {
+        "id": "kitchen-utensil-set-01",
+        "name": "5-Piece Utensil Set",
+        "description": "Complete kitchen utensil set: spatula, spoon, slotted spoon, turner, and tongs. Heat-resistant up to 200°C.",
+        "category": "utensil",
+        "images": [
+            "/images/products/utensil-set-01-a.jpg",
+            "/images/products/utensil-set-01-b.jpg"
+        ],
+        "specs": {
+            "dimensions": "300 × 60 mm (avg)",
+            "weight": "350g (set)",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Black"
+            ],
+            "moq": "500 sets",
+            "leadTime": "20-25 days",
+            "packaging": "Gift box + Carton"
+        },
+        "features": [
+            "Heat Resistant",
+            "Non-scratch",
+            "BPA Free",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-03-01"
+    },
+    {
+        "id": "kitchen-utensil-holder-01",
+        "name": "Utensil Holder Crock",
+        "description": "Stylish countertop holder for organizing spatulas, spoons, and whisks. Heavy base prevents tipping.",
+        "category": "utensil",
+        "images": [
+            "/images/products/utensil-holder-01-a.jpg"
+        ],
+        "specs": {
+            "dimensions": "Ø110 × 180 mm",
+            "weight": "600g",
+            "material": "Wood Fiber Composite",
+            "color": [
+                "Natural",
+                "Dark Oak",
+                "Black"
+            ],
+            "moq": "500 pcs",
+            "leadTime": "20-25 days",
+            "packaging": "Individual box + Carton"
+        },
+        "features": [
+            "Heavy Base",
+            "Large Capacity",
+            "BPA Free",
+            "Eco-friendly"
+        ],
+        "createdAt": "2026-03-01"
     }
 ]

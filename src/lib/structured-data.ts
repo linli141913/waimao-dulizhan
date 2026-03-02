@@ -31,8 +31,8 @@ export function productJsonLd(product: Product) {
     return {
         "@context": "https://schema.org",
         "@type": "Product",
-        name: `${product.specs.material} Cutting Board - ${product.specs.dimensions}`,
-        description: `${product.specs.material} cutting board, ${product.specs.dimensions}. Features: ${product.features.join(", ")}. MOQ: ${product.specs.moq}.`,
+        name: `${product.name} - ${product.specs.dimensions}`,
+        description: `${product.name}. ${product.specs.material}, ${product.specs.dimensions}. Features: ${product.features.join(", ")}. MOQ: ${product.specs.moq}.`,
         brand: {
             "@type": "Brand",
             name: "WoodCraftPro",

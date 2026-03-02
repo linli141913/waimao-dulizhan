@@ -33,8 +33,8 @@
     },
     "featuredProducts": {
         "sectionTag": "我们的产品",
-        "sectionTitle": "精选砧板",
-        "sectionDesc": "浏览我们的优质木纤维砧板系列，提供多种形状和尺寸选择。"
+        "sectionTitle": "精选产品",
+        "sectionDesc": "浏览我们的优质木纤维厨房用品系列 — 砧板、托盘和厨具。"
     },
     "cta": {
         "title": "准备好开始您的项目了吗？",
@@ -109,10 +109,12 @@
     },
     "footer": {
         "brand": "WoodCraftPro",
-        "brandDesc": "专业木纤维砧板制造商，提供 OEM & ODM 定制服务。",
+        "brandDesc": "专业木纤维厨房用品制造商，提供 OEM & ODM 定制服务。",
         "productsTitle": "产品",
         "allProducts": "全部产品",
         "cuttingBoards": "砧板系列",
+        "servingTrays": "托盘系列",
+        "utensils": "厨具系列",
         "companyTitle": "公司",
         "aboutUs": "关于我们",
         "copyright": "© {year} WoodCraftPro. 版权所有。"

@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import productsData from "@/data/products.json";
+import ImageGallery from "@/components/product/ImageGallery";
 import InteractiveViewers from "@/components/product/InteractiveViewers";
 import { productJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 import type { Product } from "@/types/product";
@@ -25,8 +27,8 @@ export function generateMetadata({ params }: { params: Promise<{ id: string }> }
         const product = products.find((p) => p.id === id);
         if (!product) return { title: "Product Not Found" };
         return {
-            title: `${product.specs.material} ${product.specs.dimensions} | WoodCraftPro`,
-            description: `${product.specs.material} cutting board - ${product.specs.dimensions}. ${product.features.join(", ")}. MOQ: ${product.specs.moq}.`,
+            title: `${product.name} - ${product.specs.dimensions} | WoodCraftPro`,
+            description: `${product.name} - ${product.specs.material} cutting board. ${product.specs.dimensions}. ${product.features.join(", ")}. MOQ: ${product.specs.moq}.`,
         };
     });
 }
@@ -62,7 +64,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         breadcrumbJsonLd([
                             { name: "Home", url: "https://woodcraftpro.com" },
                             { name: "Products", url: "https://woodcraftpro.com/products" },
-                            { name: product.specs.dimensions, url: `https://woodcraftpro.com/products/${product.id}` },
+                            { name: product.name, url: `https://woodcraftpro.com/products/${product.id}` },
                         ])
                     ),
                 }}
@@ -75,7 +77,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         <span className="mx-2">/</span>
                         <Link href="/products" className="hover:text-emerald-600">Products</Link>
                         <span className="mx-2">/</span>
-                        <span className="text-zinc-900 dark:text-white">{product.specs.dimensions}</span>
+                        <span className="text-zinc-900 dark:text-white">{product.name}</span>
                     </nav>
                 </div>
             </div>
@@ -83,29 +85,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             {/* Product Content */}
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                    {/* Left: Image Gallery */}
-                    <div className="space-y-4">
-                        {/* Main image placeholder */}
-                        <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-amber-50 to-orange-100 dark:from-zinc-800 dark:to-zinc-700">
-                            <div className="flex h-full items-center justify-center">
-                                <div className="text-center">
-                                    <svg className="mx-auto h-24 w-24 text-amber-300/60 dark:text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.5}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                                    </svg>
-                                    <p className="mt-3 text-sm text-amber-400/80 dark:text-zinc-500">Product Image</p>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Thumbnail row */}
-                        <div className="grid grid-cols-4 gap-3">
-                            {product.images.map((_, index) => (
-                                <div
-                                    key={index}
-                                    className="aspect-square rounded-lg bg-gradient-to-br from-amber-50 to-orange-100 dark:from-zinc-800 dark:to-zinc-700"
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    {/* Left: Image Gallery — Client Component */}
+                    <ImageGallery images={product.images} productName={product.name} />
 
                     {/* Right: Product Info */}
                     <div>
@@ -116,11 +97,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                         {/* Title */}
                         <h1 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
-                            {product.specs.material}
+                            {product.name}
                         </h1>
                         <p className="mt-1 text-lg text-zinc-500 dark:text-zinc-400">
                             {product.specs.dimensions}
                         </p>
+
+                        {/* Description */}
+                        {product.description && (
+                            <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                {product.description}
+                            </p>
+                        )}
 
                         {/* Features */}
                         <div className="mt-6 flex flex-wrap gap-2">
@@ -186,22 +174,38 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         </h2>
                         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {related.map((p) => (
-                                <Link
-                                    key={p.id}
-                                    href={`/products/${p.id}`}
-                                    className="group rounded-2xl border border-zinc-200 p-4 transition-all hover:border-emerald-200 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-800"
-                                >
-                                    <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-amber-50 to-orange-100 dark:from-zinc-800 dark:to-zinc-700" />
-                                    <h3 className="mt-3 text-sm font-semibold text-zinc-900 group-hover:text-emerald-600 dark:text-white">
-                                        {p.specs.material}
-                                    </h3>
-                                    <p className="text-xs text-zinc-500 dark:text-zinc-400">{p.specs.dimensions}</p>
-                                </Link>
+                                <RelatedProductCard key={p.id} product={p} />
                             ))}
                         </div>
                     </div>
                 )}
             </div>
         </div>
+    );
+}
+
+/** Related product card with image support */
+function RelatedProductCard({ product }: { product: Product }) {
+    return (
+        <Link
+            href={`/products/${product.id}`}
+            className="group rounded-2xl border border-zinc-200 p-4 transition-all hover:border-emerald-200 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-800"
+        >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gradient-to-br from-amber-50 to-orange-100 dark:from-zinc-800 dark:to-zinc-700">
+                {product.images.length > 0 && (
+                    <Image
+                        src={product.images[0]}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                )}
+            </div>
+            <h3 className="mt-3 text-sm font-semibold text-zinc-900 group-hover:text-emerald-600 dark:text-white">
+                {product.name}
+            </h3>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">{product.specs.dimensions}</p>
+        </Link>
     );
 }

@@ -33,8 +33,8 @@
     },
     "featuredProducts": {
         "sectionTag": "Our Products",
-        "sectionTitle": "Featured Cutting Boards",
-        "sectionDesc": "Browse our selection of premium wood fiber cutting boards, available in various shapes and sizes."
+        "sectionTitle": "Featured Products",
+        "sectionDesc": "Browse our selection of premium wood fiber kitchenware — cutting boards, serving trays, and utensils."
     },
     "cta": {
         "title": "Ready to Start Your Project?",
@@ -109,10 +109,12 @@
     },
     "footer": {
         "brand": "WoodCraftPro",
-        "brandDesc": "Professional wood fiber cutting boards manufacturer. OEM & ODM services available.",
+        "brandDesc": "Professional wood fiber kitchenware manufacturer. OEM & ODM services available.",
         "productsTitle": "Products",
         "allProducts": "All Products",
         "cuttingBoards": "Cutting Boards",
+        "servingTrays": "Serving Trays",
+        "utensils": "Utensils",
         "companyTitle": "Company",
         "aboutUs": "About Us",
         "copyright": "© {year} WoodCraftPro. All rights reserved."
