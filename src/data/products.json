@@ -4,11 +4,7 @@
         "name": "Classic Rectangular Board",
         "description": "Our best-selling rectangular cutting board, perfect for everyday food prep. Features a juice groove and non-slip edges.",
         "category": "cutting-board",
-        "images": [
-            "/images/products/board-rect-01-a.jpg",
-            "/images/products/board-rect-01-b.jpg"
-        ],
-        "model3d": "/models/board-01.glb",
+        "images": [],
         "drawing2d": "/drawings/board-01.svg",
         "specs": {
             "dimensions": "400 × 280 × 18 mm",
@@ -35,11 +31,7 @@
         "name": "Round Serving Board",
         "description": "Elegant round board ideal for cheese platters and serving. Smooth edges with a premium finish.",
         "category": "cutting-board",
-        "images": [
-            "/images/products/board-round-01-a.jpg",
-            "/images/products/board-round-01-b.jpg"
-        ],
-        "model3d": "/models/board-02.glb",
+        "images": [],
         "drawing2d": "/drawings/board-02.svg",
         "specs": {
             "dimensions": "Ø350 × 18 mm",
@@ -66,9 +58,7 @@
         "name": "Professional Chef Board",
         "description": "Extra-large board designed for professional kitchens. Ample workspace for carving and heavy-duty prep.",
         "category": "cutting-board",
-        "images": [
-            "/images/products/board-large-01-a.jpg"
-        ],
+        "images": [],
         "specs": {
             "dimensions": "500 × 350 × 20 mm",
             "weight": "1200g",
@@ -96,10 +86,7 @@
         "name": "Mini Prep Board Set",
         "description": "Compact set of 3 mini boards for small tasks — garlic, herbs, lemon slicing. Color-coded for hygiene.",
         "category": "cutting-board",
-        "images": [
-            "/images/products/board-mini-01-a.jpg",
-            "/images/products/board-mini-01-b.jpg"
-        ],
+        "images": [],
         "specs": {
             "dimensions": "200 × 150 × 12 mm (×3)",
             "weight": "280g (each)",
@@ -126,11 +113,7 @@
         "name": "Rectangular Serving Tray",
         "description": "Elegant serving tray with integrated handles. Perfect for breakfast in bed, charcuterie, or entertaining.",
         "category": "serving-tray",
-        "images": [
-            "/images/products/tray-rect-01-a.jpg",
-            "/images/products/tray-rect-01-b.jpg"
-        ],
-        "model3d": "/models/tray-01.glb",
+        "images": [],
         "specs": {
             "dimensions": "450 × 300 × 25 mm",
             "weight": "950g",
@@ -156,9 +139,7 @@
         "name": "Round Lazy Susan Tray",
         "description": "Rotating round tray for dining tables. Smooth 360° rotation with anti-slip base.",
         "category": "serving-tray",
-        "images": [
-            "/images/products/tray-round-01-a.jpg"
-        ],
+        "images": [],
         "specs": {
             "dimensions": "Ø400 × 30 mm",
             "weight": "1100g",
@@ -184,10 +165,7 @@
         "name": "5-Piece Utensil Set",
         "description": "Complete kitchen utensil set: spatula, spoon, slotted spoon, turner, and tongs. Heat-resistant up to 200°C.",
         "category": "utensil",
-        "images": [
-            "/images/products/utensil-set-01-a.jpg",
-            "/images/products/utensil-set-01-b.jpg"
-        ],
+        "images": [],
         "specs": {
             "dimensions": "300 × 60 mm (avg)",
             "weight": "350g (set)",
@@ -213,9 +191,7 @@
         "name": "Utensil Holder Crock",
         "description": "Stylish countertop holder for organizing spatulas, spoons, and whisks. Heavy base prevents tipping.",
         "category": "utensil",
-        "images": [
-            "/images/products/utensil-holder-01-a.jpg"
-        ],
+        "images": [],
         "specs": {
             "dimensions": "Ø110 × 180 mm",
             "weight": "600g",
